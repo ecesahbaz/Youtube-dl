@@ -18,6 +18,7 @@ else
   grep -Fxvf firstId.txt updateId.txt  > /home/ece/Desktop/video/grepId.txt  #Output is printed to the grepId file.
   echo "Export to grepId finished." >> /home/ece/Desktop/cron.log
   youtube-dl -f best --batch-file="grepId.txt" >> /home/ece/Desktop/cron.log  #Output is download.
+  youtube-dl --get-filename --batch-file="grepId.txt" > /home/ece/Desktop/video/uploads.txt
   youtube-dl --get-id --batch-file="updateId.txt" > firstId.txt  #Finally the two files become equal.
   
-fi
+fi 
